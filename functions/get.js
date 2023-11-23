@@ -5,6 +5,9 @@ const headers = {
   'Content-Type': 'application/json',
 };
 
+const cors = require('cors');
+app.use(cors());
+
 
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
