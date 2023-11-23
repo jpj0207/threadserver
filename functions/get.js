@@ -16,8 +16,7 @@ const WritingSchema = new Schema({
 
 exports.handler = async function (event, context) {
   try {
-    const board = event.path.replace(/^\/|\/$/g, ''); // Remove leading and trailing slashes
-
+    const board = event.queryStringParameters.board;
     const Writing = mongoose.model(`${board}`, WritingSchema);
     const writings = await Writing.find({});
     
