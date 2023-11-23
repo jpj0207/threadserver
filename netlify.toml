@@ -11,5 +11,4 @@
   force = true
 
 [build]
-  command = "node index.js"
   functions = "/functions"
