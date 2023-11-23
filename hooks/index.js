@@ -27,8 +27,6 @@ const WritingSchema = new Schema({
 // const Writing = mongoose.model('Writing', WritingSchema);
 //     default:Date.now 사용 시 햔재 시각이 자동으로 저장
 
-
-
 app.post('/:board/write', async function (req, res) {
   const board = req.params.board
 
