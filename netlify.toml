@@ -1,0 +1,15 @@
+[[redirects]]
+  from = "/:board/write"
+  to = "/write.js"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/:board"
+  to = "/get.js"
+  status = 200
+  force = true
+
+[build]
+  command = "node index.js"
+  functions = "/functions"
