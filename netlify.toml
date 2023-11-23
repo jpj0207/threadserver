@@ -1,12 +1,6 @@
 [[redirects]]
-  from = "https://threadserver.netlify.app/:board/write"
-  to = "/write.js"
-  status = 200
-  force = true
-
-[[redirects]]
-  from = "https://threadserver.netlify.app/:board"
-  to = "/get.js"
+  from = "/*"
+  to = "/index.html"
   status = 200
   force = true
 

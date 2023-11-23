@@ -1,11 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redirect Script</title>
 </head>
 <body>
-    hello
+
+<script>
+// 현재 URL에서 동적 파라미터 추출
+const pathSegments = window.location.pathname.split('/');
+const board = pathSegments[1]; // 첫 번째 세그먼트가 동적 파라미터
+
+if (board) {
+  // 동적 파라미터를 사용하여 리다이렉션
+  if (pathSegments[2] === 'write') {
+    // "/:board/write"에 대한 리다이렉션
+    window.location.href = `/.netlify/functions/write?board=${board}`;
+  } else {
+    // "/:board"에 대한 리다이렉션
+    window.location.href = `/.netlify/functions/get?board=${board}`;
+  }
+} else {
+  console.error('Board parameter not found in the URL');
+}
+</script>
+
 </body>
 </html>
