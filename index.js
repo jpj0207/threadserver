@@ -1,11 +1,12 @@
 const mongoose = require('mongoose')
 const express = require('express');
 const app = express();
+
 const cors = require('cors');
+app.use(cors());
 
 app.use(express.json()); // for parsing application/json
 app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
-app.use(cors());
 
 //mongoose connect
 mongoose
@@ -23,6 +24,8 @@ const WritingSchema = new Schema({
     default:Date.now,
   }
 })
+
+const clientURL = `https://gradiannote.com`
 
 // const Writing = mongoose.model('Writing', WritingSchema);
 //     default:Date.now 사용 시 햔재 시각이 자동으로 저장
@@ -44,10 +47,10 @@ app.post('/:board/write', async function (req, res) {
   })
   const result = await writing.save().then(()=>{
     console.log('Success')
-    res.redirect(`http://localhost:3000/${board}/`);
+    res.redirect(`https://gradiannote.com/${board}`);
   }).catch((err)=>{
     console.error(err)
-    res.redirect(`http://localhost:3000/${board}/`);
+    res.redirect(`https://gradiannote.com/${board}/`);
   })
 });
 
