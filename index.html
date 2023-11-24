@@ -16,10 +16,10 @@ if (board) {
   // 동적 파라미터를 사용하여 리다이렉션
   if (pathSegments[2] === 'write') {
     // "/:board/write"에 대한 리다이렉션
-    window.location.href = `/.netlify/functions/write?board=${board}`;
+    window.location.href = `/functions/write?board=${board}`;
   } else {
     // "/:board"에 대한 리다이렉션
-    window.location.href = `/.netlify/functions/get?board=${board}`;
+    window.location.href = `/functions/get?board=${board}`;
   }
 } else {
   console.error('Board parameter not found in the URL');
