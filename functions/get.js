@@ -1,10 +1,3 @@
-const headers = {
-  'Access-Control-Allow-Origin': 'https://gradiannote.com',
-  'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept',
-  'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
-  'Content-Type': 'application/json',
-};
-
 const cors = require('cors');
 app.use(cors());
 
@@ -33,7 +26,6 @@ exports.handler = async function (event, context) {
     
     return {
       statusCode: 200,
-      headers,
       body: JSON.stringify(writings),
     };
   } catch (error) {
